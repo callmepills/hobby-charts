@@ -1,4 +1,4 @@
-import { FormControlLabel, FormGroup } from '@mui/material';
+import { Chip, FormControlLabel, FormGroup, Paper, Typography } from '@mui/material';
 import Switch from '@mui/material/Switch';
 import { useState } from 'react';
 import { Chart } from 'react-google-charts';
@@ -85,19 +85,30 @@ export default function BrandDetails() {
   ];
 
   return <>
-    <h1>O-Pee-Chee Platinum Hockey</h1>
+    <Paper elevation={1} sx={{ marginTop: 2, padding: 2 }}>
+      <Typography variant="h3">O-Pee-Chee Platinum</Typography>
+      <Chip label="Hockey" />
 
-    <FormGroup>
-      <FormControlLabel control={<Switch onChange={handleDiscontinuedChange}></Switch>} label="Show Discontinued"></FormControlLabel>
-    </FormGroup>
+      <Typography variant="subtitle1" sx={{ marginTop: 2 }}>
+        O-Pee-Chee Platinum is a modern, chromium-style (Opti-Chrome) hockey card line produced by Upper Deck that
+        blends the nostalgic O-Pee-Chee brand with a premium, shiny finish. It's best known for its extensive parallel
+        rainbow sets, on-card autographs, and strong rookie class representation each year. Compared to traditional
+        O-Pee-Chee, Platinum is more collector-focused, emphasizing hits, color parallels, and a sleek, high-end look
+        while remaining relatively affordable within the premium chrome category.
+      </Typography>
 
-    <Chart chartType='Timeline' data={data} width='1200px' height={showDiscontinued ? '1260px' : '630px'}
-      options={{
-        timeline: { fontName: 'Roboto', singleColor: 'gray' }
-      }} />
+      <Typography variant="h5" sx={{ marginTop: 2 }}>Parallels</Typography>
+      <FormGroup>
+        <FormControlLabel control={<Switch onChange={handleDiscontinuedChange}></Switch>} label="Show Discontinued"></FormControlLabel>
+      </FormGroup>
+      <Chart chartType='Timeline' data={data} width='100%' height={showDiscontinued ? '1160px' : '630px'}
+        options={{
+          timeline: { fontName: 'Roboto', singleColor: '#616161' }
+        }} />
 
-    <p>
-      *: Technically, the parallel was called Rainbow Orange in 2016 but I've combined them for now.
-    </p>
+      <Typography variant="subtitle1">
+        *: Technically, the parallel was called Rainbow Orange in 2016 but I've combined them for now.
+      </Typography>
+    </Paper>
   </>
 }
