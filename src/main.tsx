@@ -16,7 +16,7 @@ createRoot(document.getElementById("root")!).render(
       <Route path="/hobby-charts" element={<App />}>
         <Route index element={<Home />} />
         <Route path="brands" element={<BrandList />} />
-        <Route path="brands/:brand" element={<BrandDetails />} />
+        <Route path="brands/:brandId" element={<BrandDetails />} />
       </Route>
     </Routes>
   </BrowserRouter>,

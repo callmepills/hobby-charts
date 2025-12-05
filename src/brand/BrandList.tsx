@@ -1,35 +1,9 @@
 import { Button, Card, CardActions, CardContent, Chip, Grid, Paper, Typography } from "@mui/material";
-
-const BRANDS = [
-    {
-        name: "O-Pee-Chee Platinum",
-        sport: "Hockey",
-        description: "A modern, chromium-style (Opti-Chrome) hockey card line produced by Upper Deck that blends the nostalgic O-Pee-Chee brand with a premium, shiny finish.",
-        link: "/hobby-charts/brands/o-pee-chee-platinum-hockey",
-    },
-    {
-        name: "Topps Chrome",
-        sport: "Baseball",
-        description: "A premium, glossy, chromium-stock version of the Topps flagship set that highlights rookies, stars, and parallels with a focus on shine, color refractors, and collectability.",
-    },
-    {
-        name: "Panini Prizm",
-        sport: "Football",
-        description: "A flagship chromium-style card line known for its sleek design, deep checklist, and highly sought-after color parallels and rookie cards.",
-    },
-    {
-        name: "Panini Select",
-        sport: "Basketball",
-        description: "A tiered, chromium-based product known for its premium feel, multi-level base set, and vibrant array of parallels and inserts that highlight top rookies and stars.",
-    },
-    {
-        name: "Panini Mosaic",
-        sport: "Football",
-        description: "A bold, chromium-based line known for its eye-catching geometric patterns, strong rookie presence, and wide range of colorful parallels and inserts.",
-    },
-];
+import { getAllBrands } from "./Brand";
 
 export default function BrandList() {
+    const brands = getAllBrands();
+
     return <>
         <Paper elevation={1} sx={{ marginTop: 2, padding: 2 }}>
             <Typography variant="h3">Brands</Typography>
@@ -43,7 +17,7 @@ export default function BrandList() {
             </Typography>
         </Paper>
         <Grid container spacing={2} sx={{ marginTop: 2 }}>
-            {BRANDS.map((brand) => (
+            {brands.map((brand) => (
                 <Grid size={3}>
                     <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
                         <CardContent>
@@ -56,7 +30,7 @@ export default function BrandList() {
                             </Typography>
                         </CardContent>
                         <CardActions sx={{ marginTop: "auto" }}>
-                            <Button href={brand.link} disabled={!brand.link}>View Details</Button>
+                            <Button href={`/hobby-charts/brands/${brand.brandId}`} disabled={brand.disabled}>View Details</Button>
                         </CardActions>
                     </Card>
                 </Grid>
