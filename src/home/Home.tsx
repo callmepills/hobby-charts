@@ -23,7 +23,23 @@ export default function Home() {
                 </Paper>
             </Grid>
             <Grid size={4}>
-                <Card sx={{ height: "100%" }}>
+                <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="div">
+                            Sports
+                        </Typography>
+                        <Typography variant="body2">
+                            The sports card hobby encompasses a variety of sports, each with its own unique appeal and collector base.  
+                            Together, these sports create a vibrant and multifaceted collecting experience.
+                        </Typography>
+                    </CardContent>
+                    <CardActions sx={{ marginTop: "auto" }}>
+                        <Button href="/hobby-charts/sports">Explore Sports</Button>
+                    </CardActions>
+                </Card>
+            </Grid>
+            <Grid size={4}>
+                <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
                     {/* <CardMedia
                         sx={{ height: 140 }}
                         image="/static/images/cards/contemplative-reptile.jpg"
@@ -38,13 +54,13 @@ export default function Home() {
                             everything from entry-level collecting to ultra-premium releases.
                         </Typography>
                     </CardContent>
-                    <CardActions>
+                    <CardActions sx={{ marginTop: "auto" }}>
                         <Button href="/hobby-charts/brands">Explore Brands</Button>
                     </CardActions>
                 </Card>
             </Grid>
             <Grid size={4}>
-                <Card sx={{ height: "100%" }}>
+                <Card sx={{ height: "100%", display: "flex", flexDirection: "column" }}>
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
                             Placeholder
@@ -54,19 +70,9 @@ export default function Home() {
                             feugiat. In eget ligula sit amet nulla interdum elementum ac id ante.
                         </Typography>
                     </CardContent>
-                </Card>
-            </Grid>
-            <Grid size={4}>
-                <Card sx={{ height: "100%" }}>
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                            Placeholder
-                        </Typography>
-                        <Typography variant="body2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam convallis ut sapien ut
-                            feugiat. In eget ligula sit amet nulla interdum elementum ac id ante.
-                        </Typography>
-                    </CardContent>
+                    <CardActions sx={{ marginTop: "auto" }}>
+                        <Button disabled>Explore Placeholder</Button>
+                    </CardActions>
                 </Card>
             </Grid>
         </Grid>

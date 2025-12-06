@@ -1,4 +1,4 @@
-type Brand = {
+type BrandDefinition = {
     brandId: string;
     name: string;
     sport: string;
@@ -7,7 +7,7 @@ type Brand = {
     disabled?: boolean;
 };
 
-const BRANDS: Brand[] = [
+const BRAND_DEFINITIONS: BrandDefinition[] = [
     {
         brandId: "o-pee-chee-platinum-hockey",
         name: "O-Pee-Chee Platinum",
@@ -59,10 +59,10 @@ const BRANDS: Brand[] = [
     },
 ];
 
-export function getAllBrands() {
-    return BRANDS;
+export function getAllBrandDefintions() {
+    return BRAND_DEFINITIONS;
 }
 
-export function getBrand(brandId?: string) {
-    return BRANDS.find(brand => brand.brandId === brandId);
+export function getBrandDefinition(brandId?: string) {
+    return BRAND_DEFINITIONS.find(brand => brand.brandId === brandId);
 }

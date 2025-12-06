@@ -1,8 +1,8 @@
 import { Button, Card, CardActions, CardContent, Chip, Grid, Paper, Typography } from "@mui/material";
-import { getAllBrands } from "./Brand";
+import { getAllBrandDefintions } from "../utils/BrandDefinition";
 
 export default function BrandList() {
-    const brands = getAllBrands();
+    const brands = getAllBrandDefintions();
 
     return <>
         <Paper elevation={1} sx={{ marginTop: 2, padding: 2 }}>

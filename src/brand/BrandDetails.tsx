@@ -3,14 +3,14 @@ import Switch from '@mui/material/Switch';
 import { useState } from 'react';
 import { Chart } from 'react-google-charts';
 import { useParams } from 'react-router';
-import { getBrand } from './Brand';
-import { convertParallelsToData, findParallelsByBrand } from './Parallel';
+import { getBrandDefinition } from '../utils/BrandDefinition';
+import { convertParallelsToData, findParallelsByBrand } from '../utils/Parallel';
 
 export default function BrandDetails() {
   const { brandId } = useParams();
   const [showDiscontinued, setShowDiscontinued] = useState(false);
 
-  const brand = getBrand(brandId);
+  const brand = getBrandDefinition(brandId);
   const parallels = findParallelsByBrand(brandId);
 
   const activeData = convertParallelsToData(parallels, false);
